@@ -1,0 +1,22 @@
+git config --global user.name "Artem Luban"
+git config --global user.email lubanartem@gmail.com
+git config --global core.editor "'C:\\Program Files\\Sublime Text 3\\sublime_text.exe' -multiInst -nosession"
+git init second
+git clone https://github.com/naitlefs/first.git
+cd first
+nano .gitignore
+cd ../second
+nano .gitignore
+cd ../first
+git add .
+git commit -m "some text"
+git push
+cd ../second
+git add .
+git commit -m "some text"
+git remote add origin https://github.com/naitlefs/second.git
+git push -u origin master
+
+
+https://github.com/naitlefs/first
+https://github.com/naitlefs/second
