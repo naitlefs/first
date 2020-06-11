@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flower</title>
+    <style>
+
+        .wrapper {
+            position: relative;
+            margin: 4em 4em;
+        }
+
+        .wrapper:after {
+            top: 4em;
+            left: 5.2em;
+            width: 4em;
+            height: 4em;
+            border-radius: 50%;
+            background: yellow;
+            border: 2px solid green;
+        }
+
+        .petals {
+            position: relative;
+            margin: 2em 8em;
+        }
+
+        .wrapper:after {
+            position: absolute;
+            content: "";
+            display: block;
+        }
+
+        .petals {
+            width: 5em;
+            height: 5em;
+            background: radial-gradient(circle at 65% 15%, red, blue);
+            border-radius: 50% 50% 50% 0;
+            border: 2px solid green;
+        }
+
+        .petals:nth-child(2) {
+            position: absolute;
+            top: 0;
+            background: radial-gradient(circle at 65% 15%, blue, green);
+            transform: rotate(60deg);
+            transform-origin: 0.9em 4.5em;
+        }
+
+        .petals:nth-child(3) {
+            position: absolute;
+            top: 0;
+            background: radial-gradient(circle at 65% 15%, green, yellow);
+            transform: rotate(120deg);
+            transform-origin: 0.3em 5em;
+        }
+
+        .petals:nth-child(4) {
+            position: absolute;
+            top: 0;
+            background: radial-gradient(circle at 65% 15%, yellow, red);
+            transform: rotate(180deg);
+            transform-origin: -0.3em 5em;
+        }
+
+        .petals:nth-child(5) {
+            position: absolute;
+            top: 0;
+            background: radial-gradient(circle at 65% 15%, red, green);
+            transform: rotate(-60deg);
+            transform-origin:-1.5em 5em;
+        }
+
+        .petals:nth-child(6) {
+            position: absolute;
+            top: 0;
+            background: radial-gradient(circle at 65% 15%, green, yellow);
+            transform: rotate(-120deg);
+            transform-origin: -0.9em 5em;
+        }
+        
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="petals"></div>
+    <div class="petals"></div>
+    <div class="petals"></div>
+    <div class="petals"></div>
+    <div class="petals"></div>
+    <div class="petals"></div>
+</div>
+</body>
+</html>

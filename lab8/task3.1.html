@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3.1</title>
+</head>
+<body>
+<div id="square" style=" width: 250px;height: 250px;background-color: red;border: darkblue inset 10px;"></div>
+<button id="button" onclick="change()">Изменить фон на синий</button>
+</body>
+<script type="text/javascript">
+    function change() {
+        let color, text;
+        if (document.querySelector('#square').style.backgroundColor === 'red') {
+            color = 'blue';
+            text = 'Изменить фон на красный';
+        } else {
+            color = 'red';
+            text = 'Изменить фон на синий';
+        }
+        button.innerHTML = text;
+        square.style.backgroundColor = color;
+    }
+</script>
+</html>

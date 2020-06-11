@@ -1,0 +1,39 @@
+.block {
+    height: 30%;
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-color: #FEFE00;
+}
+
+.block1 {
+    border-top: 5px dashed;
+    border-bottom: 5px dashed;
+    border-left: 5px dashed;
+    border-right: 5px dashed;
+    background-color: green;
+    width: 30%;
+    position: absolute;
+    z-index: 5;
+}
+
+.block2 {
+    border-top: 5px double;
+    border-bottom: 5px double;
+    border-left: 5px double;
+    border-right: 5px double;
+    background-image: url("web_lab_1/fon.jpg");
+    position: absolute;
+    width: 30%;
+    z-index: 10;
+    left: 30px;
+    top: 100px;
+}
+
+.block3 {
+    background-color: red;
+    position: absolute;
+    width: 30%;
+    z-index: 15;
+    left: 60px;
+    top: 200px;
+}

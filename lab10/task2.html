@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 2</title>
+</head>
+<body>
+<div>
+    <p><span><span><span><span></span></span></span></span></p>
+    <p><span></span></p>
+</div>
+<div id="result"></div>
+</body>
+<script>
+    function generateTree(elem, space) {
+        let child = elem.firstElementChild;
+        let topElements = document.createElement('p');
+        while (child) {
+            var innerElement = document.createElement('p');
+
+            let str = '';
+            for (let i = 0; i < space; i++) {
+                str += "&nbsp;";
+            }
+            innerElement.innerHTML = str + child.tagName;
+
+            var list = generateTree(child, space + 1);
+            innerElement.appendChild(list);
+
+            topElements.appendChild(innerElement);
+
+            child = child.nextElementSibling;
+        }
+        elem.appendChild(topElements);
+        return topElements;
+    }
+
+    generateTree(document.body, 0);
+</script>
+</html>

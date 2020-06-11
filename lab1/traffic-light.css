@@ -1,0 +1,26 @@
+body {
+    margin: unset;
+}
+
+div {
+    width: calc(33% - 3px);
+    height: 200px;
+    border-style: solid;
+    border-width: 3px;
+    float: left;
+}
+
+.red {
+    background-color: #f84a4a;
+    border-color: red;
+}
+
+.yellow {
+    background-color: lightyellow;
+    border-color: yellow;
+}
+
+.green {
+    background-color: #00ff00;
+    border-color: green;
+}

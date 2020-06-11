@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Translate 3D</title>
+    <style>
+        div {
+            border-radius: 10px;
+        }
+
+        .rec1 {
+            width: 300px;
+            height: 200px;
+            background-color: grey;
+            opacity: 0.3;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .rectangle {
+            width: 300px;
+            height: 200px;
+            background-color: blue;
+            opacity: 0.3;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            transition-duration: 1s;
+        }
+
+        .rectangle:hover {
+            transform: translate3d(-30px, -30px, 0px);
+        }
+    </style>
+</head>
+<body>
+<div class="rec1"></div>
+<div class="rectangle"></div>
+</body>
+</html>

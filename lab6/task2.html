@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 2</title>
+    <script src="task2.js"></script>
+</head>
+<body>
+<div style="width: 600px; background-color: greenyellow; border: 3px solid; padding: 5px">
+    <h1 style="text-align: center">Страничка по заказу</h1>
+    <hr>
+    <form>
+        <table>
+            <tr>
+                <td>Художник:</td>
+                <td>
+                    <select name="painter" class="select" id="painter">
+                        <option value="budda" selected>Будда Шакьямуни</option>
+                        <option value="confucii">Конфуций</option>
+                        <option value="jesus">Иисус Христос</option>
+                        <option value="mahomet">Мухаммед</option>
+                        <option value="nuton">Исаак Ньютон</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Подпись:</td>
+                <td><input id="text" class="text" type="text" required></td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Картинка для фона:</p>
+                    <input type="radio" id="back1" class="radio" name="background" value="back1" checked>
+                    <label for="back1">back1.jpeg</label><br>
+                    <input type="radio" id="back2" class="radio" name="background" value="back2">
+                    <label for="back2">back2.jpeg</label><br>
+                    <input type="radio" id="back3" class="radio" name="background" value="back3">
+                    <label for="back3">back3.jpeg</label>
+                </td>
+                <td>
+                    <p>Декорирвоание текста:</p>
+                    <input type="checkbox" id="italic" class="check" name="dekor[]" value="italic">
+                    <label for="italic">курсив/нет</label><br>
+                    <input type="checkbox" id="underscore" class="check" name="dekor[]" value="underscore">
+                    <label for="underscore">подчеркивание/нет</label><br>
+                    <input type="checkbox" id="bold" class="check" name="dekor[]" value="bold">
+                    <label for="bold">жирный/нет</label><br>
+                </td>
+            </tr>
+        </table>
+        <div>
+            <button type="reset">Сброс</button>
+            <button onsubmit="generate()" id="submit">Показать</button>
+        </div>
+    </form>
+    <hr>
+</div>
+</body>
+</html>

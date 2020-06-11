@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3.2</title>
+</head>
+<body style="margin: 0">
+<div>
+    <img id="main" src="1.png" width="50%" height="50%" style="position: relative;">
+    <img id="second" src="3.2.gif" style="position: absolute; top: 0; left:0">
+</div>
+<button onclick="move()">Move</button>
+</body>
+<script type="text/javascript">
+    let MAIN_WIDTH, MAIN_HEIGHT, SECOND_IMAGE_WIDTH, SECOND_IMAGE_HEIGHT;
+    let DIRECTION = 'down';
+
+    window.onload = () => {
+        MAIN_HEIGHT = main.height = Math.round(main.height);
+        MAIN_WIDTH = main.width = Math.round(main.width);
+
+        SECOND_IMAGE_HEIGHT = second.height = MAIN_HEIGHT / 8;
+        SECOND_IMAGE_WIDTH = second.width = MAIN_WIDTH / 7;
+    }
+
+    function move() {
+        let intervalId = setInterval(() => {
+            if (shouldStop()) {
+                clearInterval(intervalId)
+            } else {
+                switch (DIRECTION) {
+                    case "down":
+                        moveDown();
+                        break;
+                    case "right":
+                        moveRight()
+                        break;
+                    case "up":
+                        moveUp()
+                        break;
+                }
+                checkDirectionSwitch();
+            }
+
+        }, 100);
+    }
+
+    function checkDirectionSwitch() {
+        switch (DIRECTION) {
+            case "down":
+                if (parseInt(second.style.top) === MAIN_HEIGHT - SECOND_IMAGE_HEIGHT) {
+                    DIRECTION = "right";
+                }
+                break;
+            case "right":
+                DIRECTION = parseInt(second.style.top) === 0 ? "down" : "up";
+                break;
+            case "up":
+                if (parseInt(second.style.top) === 0) {
+                    DIRECTION = "right";
+                }
+                break;
+
+        }
+    }
+
+    function shouldStop() {
+        return parseInt(second.style.top) === MAIN_HEIGHT - SECOND_IMAGE_HEIGHT
+            && parseInt(second.style.left) + SECOND_IMAGE_WIDTH > MAIN_WIDTH - SECOND_IMAGE_WIDTH;
+    }
+
+    function moveDown() {
+        second.style.top = parseInt(second.style.top) + SECOND_IMAGE_HEIGHT + 'px';
+    }
+
+    function moveRight() {
+        second.style.left = parseInt(second.style.left) + SECOND_IMAGE_WIDTH + 'px';
+    }
+
+    function moveUp() {
+        second.style.top = parseInt(second.style.top) - SECOND_IMAGE_HEIGHT + 'px';
+    }
+
+
+</script>
+</html>
